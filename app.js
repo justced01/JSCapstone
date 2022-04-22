@@ -8,6 +8,7 @@ App.use(bodyParser.urlencoded({extended: true}));
 App.use(Express.static(Path.join(__dirname, "./app/assets")));
 App.set("views", Path.join(__dirname, "./app/views"));
 App.set("view engine", "ejs");
+
 // Create and listen to server
 App.listen(8000, "localhost", () => {
     console.log("Listening on 8000");

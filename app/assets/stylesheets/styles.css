@@ -6,6 +6,10 @@
     font-family: sans-serif;
 }
 
+body {
+    background-color: #fff;
+}
+
 /* Error 404 Page */
 #error-heading {
     text-align: center;
@@ -26,3 +30,68 @@
     background-color: red;
     color: white;
 }
+
+header {
+    padding: 5px 0;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+}
+main {
+    background-color: #fff;
+}
+    form {
+        margin-bottom: 10px;
+        padding: 10px 60px;
+        border: 1px solid black; 
+        text-align: right;
+    }
+    #container {
+        padding: 20px;
+    }
+        #container section {
+            display: inline-block;
+            vertical-align: top;
+        }
+        #globe {
+            cursor: move;
+        }
+        #world, #country {
+            width: 20%;
+            padding: 10px 0;
+            border-radius: 20px;
+            color: #E7E9EA;
+            background-color: #16181C;
+        }
+            #world h2, #country h2 {
+                text-align: center;
+            }
+            #world ul, #country ul {
+                list-style: none;
+            }
+                #world ul li, #country ul li {
+                    padding: 15px 20px;
+                    cursor: pointer;
+                }
+                #world ul li:hover, #country ul li:hover {
+                    transition: 0.3s;
+                    background-color: rgba(255, 255, 255, 0.134);
+                }
+                    #world ul li a, #country ul li a {
+                        text-decoration: none;
+                        color: #E7E9EA;
+                    }
+    #help {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        text-align: center;
+    }
+        #help h2 {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            color: #fff;
+            background-color: #1A8CD8;
+        }

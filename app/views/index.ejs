@@ -4,10 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <script src="https://d3js.org/d3-geo.v1.min.js"></script>
+    <script src="https://d3js.org/topojson.v2.min.js"></script>
+    <!-- <script src="//d3js.org/queue.v1.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/versor.js"></script>
     <link rel="stylesheet" href="/stylesheets/styles.css">
-    <title>Globe</title>
+    <title><%= title %></title>
 </head>
 <body>
-    <h1>HEhEH</h1>
+    <header>
+        <h1>Twitter Globe</h1>
+    </header>
+    <main>
+        <form action="">
+            <label for="">See tweets last: </label>
+            <select name="duration" id="">
+                <%_ for(let i = 1; i <= 24; i++){ _%>
+                <option value="<%= i %>"><%= i %> hour<%= i === 1 ? "" : "s" %> ago</option>
+                <%_ } _%> 
+            </select>
+        </form>
+        <div id="container">
+            <section id="world">
+                <h2>Trends in the World: </h2>
+                <ul>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                </ul>
+            </section>
+            <section>
+                <canvas id="globe"></canvas>
+                
+            </section>
+            <section id="country">
+                <h2>Trends in the <span id="currentCountry"></span>: </h2>
+                <ul>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                    <li><a href="#" target="_blank">Tweet</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    <aside id="help">
+        <h2>?</h2>
+    </aside>
 </body>
 </html>
