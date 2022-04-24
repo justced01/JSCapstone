@@ -1,4 +1,9 @@
 $(document).ready(function () {
+  $("#time").change(function () {
+    $.post($("#getTopics").attr("action"), $(this).serialize(), function (data) {
+      $("#world").html(data);
+    });
+  })
   //
   // Configuration
   //
@@ -13,9 +18,9 @@ $(document).ready(function () {
   var angles = { x: -20, y: 40, z: 0 };
   // colors
   var colorWater = "#16181C";
-  var colorLand = "#fff";
+  var colorLand = "#1A8CD8";
   var colorGraticule = "#16181C";
-  var colorCountry = "#1A8CD8";
+  var colorCountry = "#fff";
 
   //
   // Handler
@@ -25,10 +30,11 @@ $(document).ready(function () {
     var country = countryList.find(function (c) {
       return parseInt(c.id, 10) === parseInt(country.id, 10);
     });
+    
     $.post("/getTrends", country).done(function (data) {
-      console.log(data);
+      $("#country").html(data);
     });
-    current.text((country && country.name) || "");
+    // current.text((country && country.name) || "");
   }
 
   function leave(country) {
